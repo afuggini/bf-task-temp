@@ -10,12 +10,12 @@ In order to achieve this we need:
   - One dispatched when data fetching is successfull and which will contain the fetched data as its payload
   - One dispatched when data has failed to fetch and which will include an error message as its payload
 
-The process would go like this:
+The process could go like this:
 
 1. In the React container, fetch the server request to fetch the data, and immediately dispatch the first action.
 2. The data will be fetched asynchronously, so while the promise resolves, use the first action to update the state in a way that triggers a loading indicator can be used to let the user know that data is being fetched.
 3. When the fetching promise is resolved, if data is fetched successfully, dispatch the SUCCESS action with the fetched data as its payload. The reducer will update the state of the store with the new data. If, however, data fails to fetch, trigger the FAILURE action to instead update the state to include an error message that the React component can use to display on screen.
-4. Assuming the data was fetched suggessfully, the Redux store would now contain the fetch data. Render the React component and pass it the data as props via the React container.
+4. Assuming the data was fetched suggessfully, the Redux store would now contain the fetch data. Render the React component and have it pull the data from state using the `useReducer` hook.
 
 Below is some example code *only* intended for example purposes and not meant as a complete file:
 
