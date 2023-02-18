@@ -20,6 +20,8 @@ The process would go like this:
 Below is some example code *only* intended for example purposes and not meant as a complete file:
 
 ```javascript
+// imports skipped for example purposes
+
 const initialState = { data: null, loading: false, error: null };
 
 const reducer = (state, action) => {
@@ -72,11 +74,13 @@ Alternatively, the actions can be created through [action creators](https://read
 Meanwhile the container code could look something like this:
 
 ```javascript
+// imports skipped for example purposes
+
 const store = createStore(rootReducer);
 
 const Root = () => (
   <Provider store={store}>
-    <App />
+    <DataComponent />
   </Provider>
 );
 
